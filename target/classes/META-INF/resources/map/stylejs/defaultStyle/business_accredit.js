@@ -1,1 +1,0 @@
-/**/BMap._rd._cbk82218 && BMap._rd._cbk82218({"error":0,"content":{"status":0,"message":"ok.","data":{"is_auth":false}}})
