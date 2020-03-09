@@ -58,7 +58,8 @@ var THEMES=[
 
 ## 5、离线发布
 
-将自动/手动下载的离线矢量瓦片信息（在项目运行路径：webapp\map\stylejs）复制到发布包的指定目录下（webapp\map\stylejs），即可实现离线使用。
+* 运行在：jdk8/tomcat9 下  ，war包
+* 将自动/手动下载的离线矢量瓦片信息（在项目运行路径：webapp\map\stylejs）复制到发布包的指定目录下（webapp\map\stylejs），即可实现离线使用。
 
-# 注：示例中提供的AK和styleId 均为我测试环境,请自行注册百度账号，创建应用及样式。
+# 注：示例中提供的AK和styleId 均为我测试环境,开发时请自行注册百度账号，创建应用及样式。
 技术支持：453826286@qq.com
