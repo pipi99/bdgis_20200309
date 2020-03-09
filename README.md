@@ -53,7 +53,7 @@ var THEMES=[
 
 1. com.zliv.controller.BDController :后台控制器，gis的数据查询及保存控制器
 2. webapp/js : gis破解文件路径
-3. webapp/js/wy : 网源业务文件路径 （ctrl.js 操作面板控制器;  ctrlThemes.js 主题控制器;    ）
+3. webapp/js/wy : 业务文件路径 （ctrl.js 操作面板控制器;  ctrlThemes.js 主题控制器;    ）
 4. index.html ：  GIS主页面
 
 ## 5、离线发布
