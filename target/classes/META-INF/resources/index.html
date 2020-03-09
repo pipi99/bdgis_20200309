@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <title>百度GIS离线地图</title>  
+        <style type="text/css">  
+        	html, body {
+	            width: 100%;
+	            height: 100%;
+	            margin: 0;
+	            padding: 0;
+	            overflow: hidden;
+	        }
+	
+	        #main {
+	            width: 100%;
+	            height: 100%;
+	        }
+	        
+            .anchorBL{display: none;}
+            .el-tag.el-tag--success{color:#000;}
+            
+        </style>  
+        <script type="text/javascript">
+	        function getQueryVariable(variable)
+	        {
+	               var query = window.location.search.substring(1);
+	               var vars = query.split("&");
+	               for (var i=0;i<vars.length;i++) {
+	                       var pair = vars[i].split("=");
+	                       if(pair[0] == variable){return pair[1];}
+	               }
+	               return "";
+	        }
+
+            function getQueryVariableByUrl(url,variable)
+            {
+                var query = url.substring(url.indexOf("?")+1);
+                var vars = query.split("&");
+                for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+                }
+                return "";
+            }
+	        
+            //设置此项，控制是否下载地图图片//外网则可dev  ,内网prod
+            var environment = getQueryVariable("env")||"prod"; // dev开发模式，手动拖动下载瓦片   prod生产模式，不下载瓦片    autodownload自动下载瓦片模式
+            var mapStyle = getQueryVariable("mapStyle")||"defaultStyle";//默认   查看样式类 ctrlThemes.js
+            var myak = "Oz8M1qBi7MOInnVkrxzTwghaEeabWy6A";
+            var vm;
+        </script>
+        
+       <!-- 引入elementUI -->
+       <link rel="stylesheet" href="js/elementui/index.css">
+       <script src="js/elementui/vue.js"></script>
+       <script src="js/elementui/index.js"></script>
+        <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=Oz8M1qBi7MOInnVkrxzTwghaEeabWy6A"></script>-->
+           <script type="text/javascript" src="js/bmapAPIv3.0.min.js"></script>
+          <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+          <script type="text/javascript" src="js/mapv.js"></script>
+          <script type="text/javascript" src="js/GeoUtils_min.js"></script>
+      </head>
+
+      <body>
+          <div id="main">
+          </div>
+          <script type="text/javascript">
+              var map = new BMap.Map("main");
+              var point = new BMap.Point(106.064191,36.017319);   // 创建点坐标
+              map.enableScrollWheelZoom();         		// 启用滚轮放大缩小。
+              map.enableKeyboard();                		// 启用键盘操作。
+              map.setMinZoom(4);
+              map.setMaxZoom(19);
+              //map.setMaxZoom(11);
+          </script>
+
+          <!--地图自动移动-->
+        <script type="text/javascript" src="js/wy/mapDownload.js"></script>
+        <!--添加自定义控件及地图控件-->
+        <script type="text/javascript" src="js/wy/ctrls.js"></script>
+        <!--添加自定义切换主题控件-->
+        <script type="text/javascript" src="js/wy/ctrlThemes.js"></script>
+        <style type="text/css">  
+            .el-tag.el-tag--success{color:#000;}
+        </style>
+    </body>  
+</html>
